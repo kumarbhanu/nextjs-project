@@ -4,7 +4,8 @@ const ProductPrice = ({
   value,
   className,
 }: {
-  value: Number;
+  value: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   className?: any;
 }) => {
   const stringValue = value.toFixed(2);

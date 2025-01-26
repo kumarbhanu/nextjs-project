@@ -9,7 +9,7 @@ console.log(limit)
       {data.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {data?.map((product: Product) => (
-          <ProductCard product={product} key={product.slug}/>
+          <ProductCard product={{...product,price:product.price.toString()}} key={product.slug}/>
           ))}
         </div>
       ) : (

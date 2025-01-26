@@ -6,9 +6,13 @@ import { convertToPlainObject } from "@/lib/utils";
 
 const HomePage = async() => {
  const latestProducts= await getLatestProducts()
- console.log(latestProducts,"jjj")
+ const updatedProducts = latestProducts.map(product => ({
+  ...product,
+  price: product.price.toString(), // Convert Decimal to string,
+  rating: product.rating.toString()
+}));
   return <div>
-    <ProductList data={convertToPlainObject(latestProducts)} title="New Arrivals"/>
+    <ProductList data={convertToPlainObject(updatedProducts)} title="New Arrivals"/>
   </div>;
 };
 export default HomePage;
